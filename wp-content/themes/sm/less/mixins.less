@@ -1,0 +1,41 @@
+
+.page-line-mixin {
+  max-width: @container-width-xlg;
+  margin: 0 auto;
+}
+
+.bg-mixin(@color1, @color2, @bgImage) when (@switch = bg-with-image) {
+  background: linear-gradient(@color1, @color2), @bgImage top center no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+.bg-mixin(@color1, @color2) when (@switch = bg-gradient) {
+  background: linear-gradient(@color1 1%, @color2 30%);
+}
+
+.menu-title-font-mixin() {
+  font-family: 'Amatic SC',cursiv;
+}
+
+.navigation-shadow-mixin() {
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.container-adjust-mixin(@pt, @pb) {
+  padding: @pt @container-padding-right-left @pb;
+}
+
+.stick-navi {
+  position: fixed;
+  left: 0;
+  right:0;
+  top:0;
+  background-color: #dbf6ff;
+  width: 100%;
+  z-index:999
+}
+
+.fadeOutNavi {
+  opacity: 0;
+  transition: opacity .5s linear;
+}
